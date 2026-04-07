@@ -1,0 +1,10 @@
+install.log
+.cache/
+*.log
+
+# gcalcli auth
+.config/gcalcli/oauth
+
+# temp
+/tmp/
+

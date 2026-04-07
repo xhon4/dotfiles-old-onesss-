@@ -1,5 +1,0 @@
-# oxh-hyprland-dotfiles by occhi
-# Helper to source a file if it exists
-add_source() {
-    [ -f "$1" ] && source "$1"
-}
