@@ -1,0 +1,49 @@
+# oxh-hyprland-dotfiles by occhi
+# Alacritty configuration
+
+[font]
+  normal = { family = "Terminus", style = "Regular" }
+  size = 12.0
+
+[colors]
+
+[colors.primary]
+background = "#0C0B05"
+foreground = "#FEFEFE"
+
+[colors.cursor]
+text = "#0C0B05"
+cursor = "#FEFEFE"
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+
+[colors.selection]
+text = "#0C0B05"
+background = "#AFB6BF"
+
+[colors.normal]
+black   = "#000000"
+red     = "#961911"
+green   = "#C4C700"
+yellow  = "#D0D200"
+blue    = "#454343"
+magenta = "#801A49"
+cyan    = "#B0B301"
+white   = "#BFBFBF"
+
+[colors.bright]
+black   = "#454343"
+red     = "#961911"
+green   = "#C4C700"
+yellow  = "#D0D200"
+blue    = "#454343"
+magenta = "#801A49"
+cyan    = "#B0B301"
+white   = "#FEFEFE"
+
+[window]
+  padding = { x = 10, y = 10 }
+  decorations = "none"
+  dynamic_title = true
+  opacity = 0.9

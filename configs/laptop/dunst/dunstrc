@@ -1,0 +1,56 @@
+[global]
+    font = Terminus 12
+    format = "<b>%a</b>\n────────────────────────────────\n%s\n%b"
+    alignment = left
+    vertical_alignment = center
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 32
+    width = 320
+    height = (0, 80)
+    offset = (10, 50)
+    origin = top-right
+    transparency = 0
+    frame_width = 1
+    frame_color = "#B0B301"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    corner_radius = 0
+    padding = 6
+    horizontal_padding = 10
+    separator_height = 1
+    separator_color = "#B0B301"
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#888888"
+    frame_color = "#3d3d3d"
+    timeout = 2
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#B0B301"
+    timeout = 2
+
+[urgency_critical]
+    background = "#B0B301"
+    foreground = "#000000"
+    frame_color = "#FFFFFF"
+    timeout = 0
+
+[discord]
+    appname = discord
+    format = "<b>%s</b>\n%b"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#B0B301"
+    timeout = 4
+
+[volume]
+    summary = "Volumen"
+    appname = "volume"
+
+[brightness]
+    summary = "Brillo"
+    appname = "brightness"

@@ -1,0 +1,26 @@
+
+# oxh-hyprland-dotfiles by occhi
+# Cava configuration
+
+[general]
+framerate = 60
+autosens = 1
+bars = 0
+
+[input]
+method = pipewire
+source = auto
+
+[output]
+method = noncurses
+channels = stereo
+
+[color]
+background = 'default'
+foreground = 'default
+gradient = 0
+
+[smoothing]
+monstercat = 1
+waves = 0
+noise_reduction = 77

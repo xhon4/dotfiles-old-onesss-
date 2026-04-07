@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# ─────────────────────────────────────────
+# hyprland-ricing by occhi
+# ~/.config/hypr/scripts/volume.sh
+# ─────────────────────────────────────────
+# Volume control using pamixer + dunstify
+
+vol_dir="$HOME/.config/hypr/assets"
+
+notify() {
+    dunstify -u low -h string:x-dunst-stack-tag:cvolum "$@"
+}
+
+get_volume() {
+    status=$(pamixer --get-volume-human)
+    if [ "$status" = "muted" ]; then
+        echo "muted"
+    else
+        echo "$status" | sed 's/%//'
+    fi
+}
+
+get_icon() {
+    current_vol=$(get_volume)
+    if [ "$current_vol" = "muted" ] || [ "$current_vol" -eq 0 ]; then
+        icon="$vol_dir/mute.png"
+    else
+        icon="$vol_dir/vol.png"
+    fi
+}
+
+show_notification() {
+    get_icon
+    message="Volume: $(get_volume)"
+    echo "$message" | grep -q "muted" || message="${message}%"
+    notify -i "$icon" "$message"
+}
+
+adjust_volume() {
+    pamixer --unmute
+    pamixer --allow-boost --set-limit 150 "$@"
+    show_notification
+}
+
+toggle_mute() {
+    pamixer --toggle-mute
+    get_icon
+    if [ "$(pamixer --get-mute)" = "true" ]; then
+        message="Muted"
+    else
+        message="Unmuted"
+    fi
+    notify -i "$icon" "$message"
+}
+
+case $1 in
+    --get)    get_volume ;;
+    --inc)    adjust_volume -i 5 ;;
+    --dec)    adjust_volume -d 5 ;;
+    --toggle) toggle_mute ;;
+    *)        echo "$(get_volume)%" ;;
+esac

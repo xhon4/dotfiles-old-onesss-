@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────
+# hyprland-ricing by occhi
+# ~/.config/yazi/theme.toml
+# ─────────────────────────────────────────
+
+[manager]
+cwd = { fg = "#C4C700" }
+
+hovered         = { fg = "#0C0B05", bg = "#C4C700", bold = true }
+preview_hovered = { underline = false }
+
+find_keyword  = { fg = "#961911", italic = false }
+find_position = { fg = "#FEFEFE", bg = "reset" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+
+mode_normal = { fg = "#0C0B05", bg = "#C4C700", bold = true }
+mode_select = { fg = "#0C0B05", bg = "#B0B301", bold = true }
+mode_unset  = { fg = "#FEFEFE", bg = "#961911", bold = true }
+
+progress_label  = { fg = "#FEFEFE", bold = true }
+progress_normal = { fg = "#C4C700", bg = "#454343" }
+progress_error  = { fg = "#961911", bg = "#454343" }
+
+[select]
+border   = { fg = "#21252e" }
+active   = { fg = "#0C0B05", bg = "#C4C700", bold = true }
+inactive = { fg = "#FEFEFE" }

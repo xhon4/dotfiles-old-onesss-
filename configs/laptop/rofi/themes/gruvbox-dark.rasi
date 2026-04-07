@@ -1,0 +1,86 @@
+/* Definición global */
+* {
+    background:         #000000;  /* Negro puro para el fondo */
+    foreground:         #FFFFFF;  /* Blanco puro para texto y elementos */
+    selected-bg:        #FFFFFF;  /* Blanco para fondo de selección */
+    selected-fg:        #000000;  /* Negro para texto de selección */
+    border:             #FFFFFF;  /* Blanco para bordes */
+
+    /* Fuente */
+    font: "Terminus 12"; /* Cambia a Noto Sans o tu fuente preferida si quieres */
+    text-color: @foreground;
+}
+
+/* Ventana principal */
+window {
+    background-color: @background;
+    border: 0px; /* Cambiado de 2px a 0px para eliminar el borde */
+    border-color: @border;
+    border-radius: 0px; /* Bordes cuadrados para el estilo brutalista */
+    padding: 10px;
+    width: 600px;
+}
+
+/* Caja principal */
+mainbox {
+    background-color: @background;
+    border: 0px;
+    padding: 0px;
+}
+
+/* Caja de entrada */
+inputbar {
+    spacing: 0;
+    background-color: @background;
+    border: 1px;
+    border-color: @border;
+    border-radius: 0px;
+    padding: 5px;
+    children: [ prompt, entry ];
+}
+
+/* Prompt */
+prompt {
+    padding: 5px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/* Campo de texto */
+entry {
+    background-color: @background;
+    text-color: @foreground;
+    padding: 5px;
+}
+
+/* Lista de opciones */
+listview {
+    spacing: 0px;
+    padding: 5px;
+    background-color: @background;
+    border: 1px;
+    border-color: @border;
+}
+
+/* Elementos de la lista */
+element {
+    padding: 5px;
+    background-color: @background;
+    text-color: @foreground;
+    border: 0px;
+}
+
+/* Elemento seleccionado */
+element selected {
+    background-color: @selected-bg;
+    text-color: @selected-fg;
+    border: 1px;
+    border-color: @border;
+}
+
+/* Texto dentro de los elementos */
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    padding: 0px;
+}
