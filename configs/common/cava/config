@@ -17,7 +17,7 @@ channels = stereo
 
 [color]
 background = 'default'
-foreground = 'default
+foreground = 'default'
 gradient = 0
 
 [smoothing]
