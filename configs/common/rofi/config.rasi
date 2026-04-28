@@ -1,3 +1,4 @@
+/* oxh-hyprland-dotfiles by occhi */
 configuration {
     modi: "drun,run,window,ssh";
     font: "JetBrainsMono Nerd Font 10";

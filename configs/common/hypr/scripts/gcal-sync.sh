@@ -1,4 +1,5 @@
 #!/bin/bash
+# oxh-hyprland-dotfiles by occhi
 
 CACHE="$HOME/.cache/gcalcli"
 mkdir -p "$CACHE"

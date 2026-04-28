@@ -1,4 +1,5 @@
 #!/bin/bash
+# oxh-hyprland-dotfiles by occhi
 options="󰍁 Lock
 󰒲 Suspend
 󰗽 Logout

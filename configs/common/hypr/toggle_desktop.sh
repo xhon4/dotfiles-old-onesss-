@@ -1,4 +1,5 @@
 #!/bin/bash
+# oxh-hyprland-dotfiles by occhi
 STATE_FILE="/tmp/hypr_hidden_state"
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
 

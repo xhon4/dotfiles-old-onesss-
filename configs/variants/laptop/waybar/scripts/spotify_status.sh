@@ -1,3 +1,4 @@
+# oxh-hyprland-dotfiles by occhi
 MAXLEN=40
 
 player=$(playerctl --list-all 2>/dev/null | grep -i "spotify" | head -n1 | tr -d '[:space:]')

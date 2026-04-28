@@ -1,3 +1,4 @@
+/* oxh-hyprland-dotfiles by occhi */
 * {
     font-family: "Inconsolata Semi Condensed Bold", "Iosevka Nerd Font", "Material Design Icons Desktop", "Font Awesome 6 Free Solid", monospace;
     font-size: 15px;
@@ -169,7 +170,7 @@ window#waybar {
 }
 
 
-/* ── tooltip (calendary) ───────────────────────────────────────────────── */
+/* ── tooltip (calendar) ────────────────────────────────────────────────── */
 tooltip {
     background-color: #0C0B05;
     border: 1px solid #454343;

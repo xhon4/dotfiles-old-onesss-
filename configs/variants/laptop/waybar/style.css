@@ -1,12 +1,7 @@
-/* ─────────────────────────────────────────
-   hyprland-ricing by occhi
-   ~/.config/waybar/style.css
-   ─────────────────────────────────────────
-   Adapted for: 1366x768 laptop */
-
+/* oxh-hyprland-dotfiles by occhi */
 * {
     font-family: "Inconsolata Semi Condensed Bold", "Iosevka Nerd Font", "Material Design Icons Desktop", "Font Awesome 6 Free Solid", monospace;
-    font-size: 12px;        /* reducido de 15 → 12 */
+    font-size: 12px;
     border: none;
     border-radius: 0;
     padding: 0;
@@ -32,7 +27,7 @@ window#waybar {
 
 #custom-launcher {
     color: #FEFEFE;
-    padding: 0 5px;         /* reducido de 6 → 5 */
+    padding: 0 5px;
 }
 
 #custom-sep,
@@ -49,9 +44,9 @@ window#waybar {
 #workspaces button {
     color: #454343;
     background: transparent;
-    padding: 0 7px;         /* reducido de 9 → 7 */
+    padding: 0 7px;
     min-width: 0;
-    font-size: 14px;        /* reducido de 18 → 14 */
+    font-size: 14px;
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -171,7 +166,7 @@ window#waybar {
     padding: 0 2px;
 }
 
-/* ── tooltip (calendary) ───────────────────────────────────────────────── */
+/* ── tooltip (calendar) ────────────────────────────────────────────────── */
 tooltip {
     background-color: #0C0B05;
     border: 1px solid #454343;

@@ -1,4 +1,5 @@
 #!/bin/bash
+# oxh-hyprland-dotfiles by occhi
 
 EMOTE_FILE="$HOME/.config/rofi/emotes.txt"
 STATS_FILE="$HOME/.config/rofi/scripts/emote_stats.txt"

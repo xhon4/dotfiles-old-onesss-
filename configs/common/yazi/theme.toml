@@ -1,4 +1,4 @@
-# ~/.config/yazi/theme.toml
+# oxh-hyprland-dotfiles by occhi
 
 [manager]
 cwd = { fg = "#C4C700" }

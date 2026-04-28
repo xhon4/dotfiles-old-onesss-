@@ -1,9 +1,4 @@
-// ─────────────────────────────────────────
-// hyprland-ricing by occhi
-// ~/.config/waybar/config.jsonc
-// ─────────────────────────────────────────
-// Adapted for: 1366x768 laptop
-
+// oxh-hyprland-dotfiles by occhi
 {
     "layer": "top",
     "position": "top",

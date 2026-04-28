@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/waybar/scripts/clock_calendar.sh
+# oxh-hyprland-dotfiles by occhi
 
 python3 - <<'EOF'
 import datetime, calendar, json, subprocess, shutil, re
