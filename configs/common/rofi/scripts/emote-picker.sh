@@ -58,8 +58,9 @@ if [ -n "$SELECTED" ]; then
         sleep 0.1 && wtype "$SELECTED"
     fi
 
-    if grep -q "|$SELECTED$" "$STATS_FILE"; then
-        sed -i "s/^\([0-9]*\)|$SELECTED$/echo \$((\1+1))|$SELECTED/e" "$STATS_FILE"
+    if grep -qF "|$SELECTED" "$STATS_FILE"; then
+        awk -v sel="$SELECTED" 'BEGIN{FS=OFS="|"} $2==sel{$1=$1+1} 1' \
+            "$STATS_FILE" > "${STATS_FILE}.tmp" && mv "${STATS_FILE}.tmp" "$STATS_FILE"
     else
         echo "1|$SELECTED" >> "$STATS_FILE"
     fi
