@@ -9,7 +9,11 @@ if [[ -d "$RICECTL_ROOT/system/sddm-theme" ]]; then
 
     if [[ ! -f /etc/sddm.conf.d/theme.conf ]]; then
         srun "mkdir -p /etc/sddm.conf.d"
-        echo -e '[Theme]\nCurrent=oxh-sddm' | sudo tee /etc/sddm.conf.d/theme.conf > /dev/null
+        local tmp
+        tmp="$(mktemp)"
+        printf '%s\n%s\n' '[Theme]' 'Current=oxh-sddm' > "$tmp"
+        srun "cp '$tmp' /etc/sddm.conf.d/theme.conf"
+        rm -f "$tmp"
     fi
     success "SDDM OXH theme deployed"
 fi
