@@ -92,6 +92,7 @@ cmd_install() {
 
     # Sudo keepalive
     sudo_keepalive
+    trap 'kill "${SUDO_KEEPALIVE_PID:-}" 2>/dev/null' EXIT
 
     # Install base packages
     header "Base Packages"
@@ -143,10 +144,10 @@ cmd_install() {
     done
 
     # Wallpaper
-    if [[ -f "$RICECTL_ROOT/assets/wallpaper.jpg" ]]; then
+    if [[ -f "$RICECTL_ROOT/assets/y8yxlx.jpg" ]]; then
         header "Wallpaper"
         srun "mkdir -p /usr/share/backgrounds"
-        srun "cp '$RICECTL_ROOT/assets/wallpaper.jpg' /usr/share/backgrounds/oxh-wallpaper.jpg"
+        srun "cp '$RICECTL_ROOT/assets/y8yxlx.jpg' /usr/share/backgrounds/y8yxlx.jpg"
         success "Wallpaper deployed"
     fi
 
@@ -348,12 +349,18 @@ cmd_module() {
                 local mod_yaml="$module_dir/module.yaml"
                 [[ -f "$mod_yaml" ]] || continue
 
-                local desc=""
-                desc="$(grep '^description:' "$mod_yaml" | head -1 | sed 's/description: *//')"
+                parse_yaml "$mod_yaml" "lst"
+                local config_name="${lst_config_dir:-$mod_name}"
+                local desc="${lst_description:-}"
                 local status="  "
 
-                # Check if deployed
-                if [[ -d "$HOME/.config/$mod_name" ]] || [[ "$mod_name" == "zsh" && -f "$HOME/.zshrc" ]] || [[ "$mod_name" == "docker" && -f "/usr/bin/docker" ]]; then
+                if [[ -d "$HOME/.config/$config_name" ]] || \
+                   [[ "$mod_name" == "zsh"      && -f "$HOME/.zshrc" ]] || \
+                   [[ "$mod_name" == "docker"   && -f "/usr/bin/docker" ]] || \
+                   [[ "$mod_name" == "gpu-amd" ]] || \
+                   [[ "$mod_name" == "pipewire" && -f "/usr/bin/pipewire" ]] || \
+                   [[ "$mod_name" == "sddm"     && -d "/usr/share/sddm/themes/oxh-sddm" ]] || \
+                   [[ "$mod_name" == "qt6ct"    && -f "/usr/bin/qt6ct" ]]; then
                     status="${C_GREEN}●${C_RESET}"
                 else
                     status="${C_RED}○${C_RESET}"
@@ -370,6 +377,7 @@ cmd_module() {
             require_not_root
             require_internet
             sudo_keepalive
+            trap 'kill "${SUDO_KEEPALIVE_PID:-}" 2>/dev/null' EXIT
             deploy_module "$mod_name" "$variant"
             ;;
 
