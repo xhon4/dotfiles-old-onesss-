@@ -74,10 +74,11 @@ require_command() {
     fi
 }
 
-# Keep sudo alive in background
+# Keep sudo alive in background; saves PID in SUDO_KEEPALIVE_PID for cleanup
 sudo_keepalive() {
     sudo -v
-    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+    while true; do sudo -n true; sleep 30; kill -0 "$$" || exit; done 2>/dev/null &
+    SUDO_KEEPALIVE_PID=$!
 }
 
 # ---------------- YAML PARSER (minimal) ----------------
