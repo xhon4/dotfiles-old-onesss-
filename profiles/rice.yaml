@@ -8,6 +8,7 @@ base-packages:
   - wget
   - unzip
   - rsync
+  - jq
 
 modules:
   - zsh
@@ -35,3 +36,6 @@ fonts:
 
 aur-fonts:
   - ttf-terminus-font
+
+extras-aur:
+  - gcalcli
