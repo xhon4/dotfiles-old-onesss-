@@ -155,6 +155,18 @@ yaml_list() {
     echo "${items[@]}"
 }
 
+# Count list items under a single top-level YAML section.
+# Returns 0 when the section is absent or empty.
+count_yaml_list() {
+    local file="$1" section="$2"
+    awk -v sec="^${section}:" '
+        $0 ~ sec        { in_section = 1; next }
+        /^[A-Za-z]/     { in_section = 0 }
+        in_section && /^[[:space:]]+-[[:space:]]/ { n++ }
+        END             { print n + 0 }
+    ' "$file"
+}
+
 # ---------------- CONFIRM ----------------
 
 confirm() {

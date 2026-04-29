@@ -82,7 +82,7 @@ cmd_install() {
 
     # Show install summary
     local mod_count
-    mod_count="$(grep -c '^ *- ' "$profile_yaml" || echo 0)"
+    mod_count="$(count_yaml_list "$profile_yaml" modules)"
     tui_install_summary "$profile" "${variant:-auto}" "$mod_count"
     echo ""
     if ! tui_confirm "Proceed with installation?"; then
@@ -411,8 +411,8 @@ cmd_profile() {
                 local pdesc=""
                 pdesc="$(grep '^description:' "$pfile" | head -1 | sed 's/description: *//')"
                 local mod_count
-                mod_count="$(grep -c '^ *-' "$pfile" || echo 0)"
-                echo "  $pname — $pdesc ($mod_count items)"
+                mod_count="$(count_yaml_list "$pfile" modules)"
+                echo "  $pname — $pdesc ($mod_count modules)"
             done
             ;;
 
